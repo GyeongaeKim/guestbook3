@@ -30,7 +30,7 @@ public class GuestbookController {
 		model.addAttribute("guestList", guestList);
 		
 		//포워드
-		return "/WEB-INF/views/list.jsp";
+		return "list";
 	}
 	
 	
@@ -55,7 +55,7 @@ public class GuestbookController {
 	public String deleteForm() {
 		System.out.println("GuestbookController>deleteForm()");
 		
-		return "/WEB-INF/views/deleteForm.jsp";
+		return "deleteForm";
 	}
 	
 	
