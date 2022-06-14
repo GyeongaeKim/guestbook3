@@ -2,6 +2,7 @@ package com.javaex.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,6 +15,9 @@ import com.javaex.vo.GuestbookVo;
 @Controller
 public class GuestbookController {
 	//필드
+	@Autowired
+	private GuestbookDao guestbookDao;
+	
 	//생성자
 	//메소드gs
 	//메소드일반
@@ -23,7 +27,7 @@ public class GuestbookController {
 		System.out.println("GuestbookController>list()");
 		
 		//Dao - getList꺼내오기
-		GuestbookDao guestbookDao = new GuestbookDao();
+		//GuestbookDao guestbookDao = new GuestbookDao();
 		List<GuestbookVo> guestList = guestbookDao.getList();
 		
 		//Model을 통해, DispatcherServlet에게 데이터 보내기(request attribute에 넣는다)
@@ -43,7 +47,7 @@ public class GuestbookController {
 		//->파라미터 꺼낼 필요 없음, 개별의 파라미터들을 vo로 묶을 필요가 없음
 		
 		//dao로 저장하기
-		GuestbookDao guestbookDao = new GuestbookDao();
+		//GuestbookDao guestbookDao = new GuestbookDao();
 		guestbookDao.insert(guestbookVo);
 		
 		return "redirect:/list";
@@ -65,7 +69,7 @@ public class GuestbookController {
 		System.out.println("GuestbookController>delete()");
 		
 		//Dao로 처리하기(삭제)
-		GuestbookDao guestbookDao = new GuestbookDao();
+		//GuestbookDao guestbookDao = new GuestbookDao();
 		int count = guestbookDao.delete(guestbookVo);
 		
 		return "redirect:/list";
