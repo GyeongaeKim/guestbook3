@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.javaex.dao.GuestbookDao;
+import com.javaex.service.GuestbookService;
 import com.javaex.vo.GuestbookVo;
 
 @Controller
 public class GuestbookController {
 	//필드
 	@Autowired
-	private GuestbookDao guestbookDao;
+	private GuestbookService guestbookService;
 	
 	//생성자
 	//메소드gs
@@ -28,7 +28,8 @@ public class GuestbookController {
 		
 		//Dao - getList꺼내오기
 		//GuestbookDao guestbookDao = new GuestbookDao();
-		List<GuestbookVo> guestList = guestbookDao.getList();
+		//Service로 변경
+		List<GuestbookVo> guestList = guestbookService.getList();
 		
 		//Model을 통해, DispatcherServlet에게 데이터 보내기(request attribute에 넣는다)
 		model.addAttribute("guestList", guestList);
@@ -48,7 +49,8 @@ public class GuestbookController {
 		
 		//dao로 저장하기
 		//GuestbookDao guestbookDao = new GuestbookDao();
-		guestbookDao.insert(guestbookVo);
+		//Service로 변경
+		guestbookService.insert(guestbookVo);
 		
 		return "redirect:/list";
 	}
@@ -70,7 +72,8 @@ public class GuestbookController {
 		
 		//Dao로 처리하기(삭제)
 		//GuestbookDao guestbookDao = new GuestbookDao();
-		int count = guestbookDao.delete(guestbookVo);
+		//Service로 변경
+		int count = guestbookService.delete(guestbookVo);
 		
 		return "redirect:/list";
 	}
