@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Guestbook3 삭제</title>
 </head>
 <body>
 	<form action="/guestbook3/delete" method="get">
@@ -14,7 +14,6 @@
 		
 		<button type="submit">삭제</button>
 		<br>
-		<br>	
 		<a href="./list">메인으로 돌아가기</a></td>
 	</form>
 </body>

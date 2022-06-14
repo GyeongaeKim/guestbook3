@@ -7,7 +7,7 @@
 <title>Guestbook3</title>
 </head>
 <body>
-	<h1>Guestbook1</h1>
+	<h1>Guestbook3</h1>
 	<p>안녕하세요<br> 게스트북 리스트입니다</p>
 	
 	<form action="/guestbook3/write" method="get">
